@@ -3,8 +3,8 @@ public class Conexion {
         System.out.println("Conectando a la red...");
     }
 
-    public String obtenerToken() {
-        return "token_de_acceso";
+    public String obtenerAcceso() {
+        return "acceso";
     }
 }
 
@@ -16,15 +16,15 @@ public class Calendario {
     }
 
     public void obtenerCalendarioEmpleado(String email) {
-        System.out.println("Obteniendo calendario del empleado: " + email + " con token: " + token);
+        System.out.println("Obteniendo calendario del empleado: " + email);
     }
 
     public void agendarReunion(List<String> asistentes, String fechaHora, String tema) {
-        System.out.println("Agendando reunión con los asistentes: " + asistentes + " para la fecha y hora: " + fechaHora + " sobre el tema: " + tema + " con token: " + token);
+        System.out.println("Agendando reunión con los asistentes: " + asistentes + " para la fecha y hora: " + fechaHora + " sobre el asunto: " + asunto );
     }
 
     public void obtenerCalendarioGrupo(String nombreGrupo) {
-        System.out.println("Obteniendo calendario del grupo: " + nombreGrupo + " con token: " + token);
+        System.out.println("Obteniendo calendario del grupo: " + nombreGrupo);
     }
 }
 
@@ -36,15 +36,15 @@ public class Contacto {
     }
 
     public void obtenerContacto(String email) {
-        System.out.println("Obteniendo contacto del email: " + email + " con token: " + token);
+        System.out.println("Obteniendo contacto del email: " + email);
     }
 
     public void enviarMensaje(String email, String mensaje) {
-        System.out.println("Enviando mensaje al email: " + email + " con el mensaje: " + mensaje + " con token: " + token);
+        System.out.println("Enviando mensaje al email: " + email + " con el mensaje: " + mensaje);
     }
 
     public void verContactos() {
-        System.out.println("Viendo todos los contactos con token: " + token);
+        System.out.println("Viendo todos los contactos);
     }
 
     public boolean existeContacto(String email) {
@@ -91,8 +91,8 @@ public class Chat {
     }
 
     public void aceptarReunion(String idReunion) {
-        String token = conexion.obtenerToken();
-        System.out.println("Aceptando reunión con ID: " + idReunion + " con token: " + token);
+        String acceso = conexion.obtenerAcceso();
+        System.out.println("Aceptando reunión);
     }
 
     public static void main(String[] args) {
