@@ -1,7 +1,6 @@
-import java.util.List;
-
 public class Conexion {
     public void conectar() {
+        System.out.println("Conectando a la red...");
     }
 
     public String obtenerToken() {
@@ -17,15 +16,15 @@ public class Calendario {
     }
 
     public void obtenerCalendarioEmpleado(String email) {
-        String token = conexion.obtenerToken();
+        System.out.println("Obteniendo calendario del empleado: " + email + " con token: " + token);
     }
 
     public void agendarReunion(List<String> asistentes, String fechaHora, String tema) {
-        String token = conexion.obtenerToken();
+        System.out.println("Agendando reunión con los asistentes: " + asistentes + " para la fecha y hora: " + fechaHora + " sobre el tema: " + tema + " con token: " + token);
     }
 
     public void obtenerCalendarioGrupo(String nombreGrupo) {
-        String token = conexion.obtenerToken();
+        System.out.println("Obteniendo calendario del grupo: " + nombreGrupo + " con token: " + token);
     }
 }
 
@@ -37,18 +36,19 @@ public class Contacto {
     }
 
     public void obtenerContacto(String email) {
-        String token = conexion.obtenerToken();
+        System.out.println("Obteniendo contacto del email: " + email + " con token: " + token);
     }
 
     public void enviarMensaje(String email, String mensaje) {
-        String token = conexion.obtenerToken();
+        System.out.println("Enviando mensaje al email: " + email + " con el mensaje: " + mensaje + " con token: " + token);
     }
 
     public void verContactos() {
-        String token = conexion.obtenerToken();
+        System.out.println("Viendo todos los contactos con token: " + token);
     }
 
     public boolean existeContacto(String email) {
+        System.out.println("Verificando existencia del contacto: " + email);
         return true;
     }
 
@@ -71,9 +71,19 @@ public class Chat {
     }
 
     public void procesarSolicitud(String solicitud) {
+        mostrarMensaje("Procesando solicitud: " + solicitud);
+        // Implementar lógica para procesar la solicitud
+        if (solicitud.contains("calendario")) {
+            calendario.obtenerCalendarioEmpleado("ejemplo@empresa.com");
+        } else if (solicitud.contains("mensaje")) {
+            contacto.obtenerYEnviarMensaje("ejemplo@empresa.com", "Este es un mensaje de prueba.");
+        }
     }
 
     public void ejecutarChat() {
+        mostrarMensaje("Iniciando chat...");
+        procesarSolicitud("calendario");
+        procesarSolicitud("mensaje");
     }
 
     public void mostrarMensaje(String mensaje) {
@@ -82,6 +92,7 @@ public class Chat {
 
     public void aceptarReunion(String idReunion) {
         String token = conexion.obtenerToken();
+        System.out.println("Aceptando reunión con ID: " + idReunion + " con token: " + token);
     }
 
     public static void main(String[] args) {
