@@ -1,30 +1,37 @@
+//clase para conectar microsoft
 public class Conexion {
+    //Conectamos la red
     public void conectar() {
         System.out.println("Conectando a la red...");
     }
-
+    //Se devuelve el id con el que accedes
     public String obtenerAcceso() {
         return "acceso";
     }
 }
 
+//clase del calendario
 public class Calendario {
-    private Conexion conexion;
+    private Conexion conexion; //la conexion es atributo privado
 
     public Calendario(Conexion conexion) {
         this.conexion = conexion;
+        //conectamos
     }
 
     public void obtenerCalendarioEmpleado(String email) {
         System.out.println("Obteniendo calendario del empleado: " + email);
+        //Implementar lógica
     }
 
     public void agendarReunion(List<String> asistentes, String fechaHora, String tema) {
         System.out.println("Agendando reunión con los asistentes: " + asistentes + " para la fecha y hora: " + fechaHora + " sobre el asunto: " + asunto );
+        //Implementar lógica
     }
 
     public void obtenerCalendarioGrupo(String nombreGrupo) {
         System.out.println("Obteniendo calendario del grupo: " + nombreGrupo);
+        //Implementar lógica
     }
 }
 
@@ -32,23 +39,27 @@ public class Contacto {
     private Conexion conexion;
 
     public Contacto(Conexion conexion) {
-        this.conexion = conexion;
+        this.conexion = conexion; 
     }
 
     public void obtenerContacto(String email) {
         System.out.println("Obteniendo contacto del email: " + email);
+        //Implementar lógica
     }
 
     public void enviarMensaje(String email, String mensaje) {
         System.out.println("Enviando mensaje al email: " + email + " con el mensaje: " + mensaje);
+        //Implementar lógica
     }
 
     public void verContactos() {
         System.out.println("Viendo todos los contactos);
+        //Implementar lógica
     }
 
     public boolean existeContacto(String email) {
         System.out.println("Verificando existencia del contacto: " + email);
+        //Implementar lógica
         return true;
     }
 
@@ -72,7 +83,7 @@ public class Chat {
 
     public void procesarSolicitud(String solicitud) {
         mostrarMensaje("Procesando solicitud: " + solicitud);
-        // Implementar lógica para procesar la solicitud
+        // Implementar lógica 
         if (solicitud.contains("calendario")) {
             calendario.obtenerCalendarioEmpleado("ejemplo@empresa.com");
         } else if (solicitud.contains("mensaje")) {
