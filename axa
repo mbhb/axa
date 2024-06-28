@@ -1,0 +1,91 @@
+import java.util.List;
+
+public class Conexion {
+    public void conectar() {
+    }
+
+    public String obtenerToken() {
+        return "token_de_acceso";
+    }
+}
+
+public class Calendario {
+    private Conexion conexion;
+
+    public Calendario(Conexion conexion) {
+        this.conexion = conexion;
+    }
+
+    public void obtenerCalendarioEmpleado(String email) {
+        String token = conexion.obtenerToken();
+    }
+
+    public void agendarReunion(List<String> asistentes, String fechaHora, String tema) {
+        String token = conexion.obtenerToken();
+    }
+
+    public void obtenerCalendarioGrupo(String nombreGrupo) {
+        String token = conexion.obtenerToken();
+    }
+}
+
+public class Contacto {
+    private Conexion conexion;
+
+    public Contacto(Conexion conexion) {
+        this.conexion = conexion;
+    }
+
+    public void obtenerContacto(String email) {
+        String token = conexion.obtenerToken();
+    }
+
+    public void enviarMensaje(String email, String mensaje) {
+        String token = conexion.obtenerToken();
+    }
+
+    public void verContactos() {
+        String token = conexion.obtenerToken();
+    }
+
+    public boolean existeContacto(String email) {
+        return true;
+    }
+
+    public void obtenerYEnviarMensaje(String email, String mensaje) {
+        if (existeContacto(email)) {
+            enviarMensaje(email, mensaje);
+        }
+    }
+}
+
+public class Chat {
+    private Conexion conexion;
+    private Calendario calendario;
+    private Contacto contacto;
+
+    public Chat() {
+        this.conexion = new Conexion();
+        this.calendario = new Calendario(conexion);
+        this.contacto = new Contacto(conexion);
+    }
+
+    public void procesarSolicitud(String solicitud) {
+    }
+
+    public void ejecutarChat() {
+    }
+
+    public void mostrarMensaje(String mensaje) {
+        System.out.println(mensaje);
+    }
+
+    public void aceptarReunion(String idReunion) {
+        String token = conexion.obtenerToken();
+    }
+
+    public static void main(String[] args) {
+        Chat chat = new Chat();
+        chat.ejecutarChat();
+    }
+}
